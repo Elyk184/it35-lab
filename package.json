@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://Elyk184.github.io/IT35-LAB/",
+  "homepage": "https://Elyk184.github.io/it35-lab/",
   "scripts": {
 
     "predeploy":"npm run build",
