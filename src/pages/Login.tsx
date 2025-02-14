@@ -8,7 +8,7 @@ import {
       IonToolbar 
   } from '@ionic/react';
   
-  const Template: React.FC = () => {
+  const Login: React.FC = () => {
     return (
       <IonPage>
         <IonHeader>
@@ -16,7 +16,7 @@ import {
             <IonButtons slot='start'>
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonTitle>Template</IonTitle>
+            <IonTitle>Login</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
@@ -25,4 +25,4 @@ import {
     );
   };
   
-  export default Template;
+  export default Login;
