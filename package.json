@@ -5,8 +5,7 @@
   "type": "module",
   "homepage": "https://Elyk184.github.io/it35-lab/",
   "scripts": {
-
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
