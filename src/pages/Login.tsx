@@ -1,14 +1,21 @@
 import { 
+  IonAvatar,
   IonButton,
   IonButtons,
     IonContent, 
     IonHeader, 
+    IonIcon, 
+    IonInput, 
+    IonInputPasswordToggle, 
+    IonItem, 
+    IonList, 
     IonMenuButton, 
     IonPage, 
     IonTitle, 
     IonToolbar, 
     useIonRouter
 } from '@ionic/react';
+import { logoIonic } from 'ionicons/icons';
 
 const Login: React.FC = () => {
   const navigation = useIonRouter();
@@ -24,7 +31,23 @@ const Login: React.FC = () => {
           <IonTitle>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
-     
+      <IonList>
+      <IonAvatar>
+        
+         <IonIcon icon={logoIonic} size="large" color="primary"></IonIcon>
+      </IonAvatar>
+      <IonItem>
+        <IonInput label="Username" placeholder="Kyle"></IonInput>
+      </IonItem>
+      <IonItem><IonInput type="password" label="Password" value="NeverGonnaGiveYouUp">
+      <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
+    </IonInput></IonItem>
+      
+
+      <IonItem>
+        <IonInput label="Email" type="email" placeholder="sample@domain.com"></IonInput>
+      </IonItem>
+    </IonList>
       <IonContent className='ion-padding'>
       <IonButton onClick={() => doLogin()} expand="full">
           Login    
