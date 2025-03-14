@@ -32,10 +32,23 @@ const Login: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonList>
-      <IonAvatar>
-        
-         <IonIcon icon={logoIonic} size="large" color="primary"></IonIcon>
-      </IonAvatar>
+      <IonAvatar
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '150px',
+                      height: '150px',
+                      borderRadius: '50%', 
+                      overflow: 'hidden' 
+                    }}
+                  >
+                     <IonIcon 
+                      icon={logoIonic}
+                      color='primary'
+                      style={{ fontSize: '120px', color: '#6c757d' }} 
+                    />
+                  </IonAvatar>
       <IonItem>
         <IonInput label="Username" placeholder="Kyle"></IonInput>
       </IonItem>
