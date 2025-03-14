@@ -16,12 +16,15 @@ const Login: React.FC = () => {
       navigation.push('/it35-lab/app','forward','replace');
   }
   return (
+        
     <IonPage>
+      
       <IonHeader>
         <IonToolbar>
           <IonTitle>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
+     
       <IonContent className='ion-padding'>
       <IonButton onClick={() => doLogin()} expand="full">
           Login    
