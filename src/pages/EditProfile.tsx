@@ -3,8 +3,6 @@ import {
   IonContent, IonPage, IonInput, IonButton, IonAlert, IonHeader,
   IonBackButton, IonButtons, IonItem, IonText, IonCol, IonGrid,
   IonRow, IonInputPasswordToggle, IonImg, IonAvatar,
-  IonToolbar,
-  IonTitle,
 } from '@ionic/react';
 import { supabase } from '../utils/supabaseClient';
 import { useHistory } from 'react-router-dom';
@@ -167,188 +165,162 @@ const EditProfile: React.FC = () => {
       };
       
   
-      return (
-        <IonPage>
-          <IonHeader>
-            <IonToolbar>
-              <IonButtons slot="start">
-                <IonBackButton  defaultHref="/it35-lab/app" />
-              </IonButtons>
-              <IonTitle>Edit Profile</IonTitle>
-            </IonToolbar>
-          </IonHeader>
-    
-          <IonContent className="ion-padding">
-            <IonGrid>
-              <IonRow className="ion-justify-content-center">
-                <IonCol className="ion-text-center" size="12">
-                  {avatarPreview && (
-                    <IonAvatar style={{ width: '120px', height: '120px', margin: '0 auto' }}>
-                      <IonImg src={avatarPreview} style={{ objectFit: 'cover' }} />
-                    </IonAvatar>
-                  )}
-                  <IonButton
-                    expand="block"
-                    color="success"
-                    onClick={() => fileInputRef.current?.click()}
-                    shape="round"
-                    size="small"
-                    style={{ marginTop: '10px' }}
-                  >
-                    Change Avatar
-                  </IonButton>
-                  <input
-                    type="file"
-                    ref={fileInputRef}
-                    style={{ display: 'none' }}
-                    accept="image/*"
-                    onChange={handleAvatarChange}
-                  />
-                </IonCol>
-              </IonRow>
-    
-              {/* Username */}
-              <IonRow>
-                <IonCol>
-                  <IonInput
-                    label="Username"
-                    type="text"
-                    labelPlacement="floating"
-                    fill="outline"
-                    color="success"
-                    shape="round"
-                    placeholder="Enter username"
-                    value={username}
-                    onIonChange={(e) => setUsername(e.detail.value!)}
-                  />
-                </IonCol>
-              </IonRow>
-    
-              {/* First and Last Name */}
-              <IonRow>
-                <IonCol size="6">
-                  <IonInput
-                    label="First Name"
-                    color="success"
-                    type="text"
-                    labelPlacement="floating"
-                    fill="outline"
-                    shape="round"
-                    placeholder="Enter first name"
-                    value={firstName}
-                    onIonChange={(e) => setFirstName(e.detail.value!)}
-                  />
-                </IonCol>
-                <IonCol size="6">
-                  <IonInput
-                    label="Last Name"
-                    type="text"
-                    color="success"
-                    labelPlacement="floating"
-                    fill="outline"
-                    shape="round"
-                    placeholder="Enter last name"
-                    value={lastName}
-                    onIonChange={(e) => setLastName(e.detail.value!)}
-                  />
-                </IonCol>
-              </IonRow>
-    
-              {/* Section Header */}
-              <IonRow>
-                <IonCol>
-                  <IonText color="medium">
-                    <h3 style={{ marginTop: '30px' }}>Change Password</h3>
-                  </IonText>
-                </IonCol>
-              </IonRow>
-    
-              {/* New Password */}
-              <IonRow>
-                <IonCol>
-                  <IonInput
-                    label="New Password"
-                    type="password"
-                    color="success"
-                    labelPlacement="floating"
-                    fill="outline"
-                    shape="round"
-                    placeholder="Enter new password"
-                    value={password}
-                    onIonChange={(e) => setPassword(e.detail.value!)}
-                  >
-                    <IonInputPasswordToggle slot="end" />
-                  </IonInput>
-                </IonCol>
-              </IonRow>
-    
-              {/* Confirm Password */}
-              <IonRow>
-                <IonCol>
-                  <IonInput
-                    label="Confirm Password"
-                    type="password"
-                    color="success"
-                    labelPlacement="floating"
-                    fill="outline"
-                    shape="round"
-                    placeholder="Confirm new password"
-                    value={confirmPassword}
-                    onIonChange={(e) => setConfirmPassword(e.detail.value!)}
-                  >
-                    <IonInputPasswordToggle slot="end" />
-                  </IonInput>
-                </IonCol>
-              </IonRow>
-    
-              {/* Section Header */}
-              <IonRow>
-                <IonCol>
-                  <IonText color="medium">
-                    <h3 style={{ marginTop: '30px' }}>Confirm Changes</h3>
-                  </IonText>
-                </IonCol>
-              </IonRow>
-    
-              {/* Current Password */}
-              <IonRow>
-                <IonCol>
-                  <IonInput
-                    label="Current Password"
-                    type="password"
-                    color="success"
-                    labelPlacement="floating"
-                    fill="outline"
-                    shape="round"
-                    placeholder="Enter current password to confirm changes"
-                    value={currentPassword}
-                    onIonChange={(e) => setCurrentPassword(e.detail.value!)}
-                  >
-                    <IonInputPasswordToggle slot="end" />
-                  </IonInput>
-                </IonCol>
-              </IonRow>
-    
-              {/* Submit Button */}
-              <IonRow className="ion-padding-vertical">
-                <IonCol>
-                  <IonButton expand="block" onClick={handleUpdate} shape="round" color="success">
-                    Save Changes
-                  </IonButton>
-                </IonCol>
-              </IonRow>
-            </IonGrid>
-    
-            {/* Alert */}
-            <IonAlert
-              isOpen={showAlert}
-              onDidDismiss={() => setShowAlert(false)}
-              message={alertMessage}
-              buttons={['OK']}
-            />
-          </IonContent>
-        </IonPage>
-      );
-    };
-    
-    export default EditProfile;
+    return (
+      <IonPage>
+        <IonHeader>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/it35-lab/app" />
+          </IonButtons>
+        </IonHeader>
+        <IonContent className="ion-padding">
+          <IonItem>
+            <IonText color="secondary">
+              <h1>Edit Profile</h1>
+            </IonText>
+          </IonItem>
+          <br />
+  
+          {/* Avatar Upload Section */}
+          <IonGrid>
+            <IonRow className="ion-justify-content-center ion-align-items-center">
+              <IonCol className="ion-text-center">
+                {avatarPreview && (
+                  <IonAvatar style={{ width: '200px', height: '200px', margin: '10px auto' }}>
+                    <IonImg src={avatarPreview} style={{ objectFit: 'cover' }} />
+                  </IonAvatar>
+                )}
+  
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  style={{ display: 'none' }}
+                  accept="image/*"
+                  onChange={handleAvatarChange}
+                />
+  
+                <IonButton expand="block" onClick={() => fileInputRef.current?.click()}>
+                  Upload Avatar
+                </IonButton>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+  
+          {/* Rest of the Form */}
+          <IonGrid>
+            <IonRow>
+              <IonCol>
+                <IonInput
+                  label="Username"
+                  type="text"
+                  labelPlacement="floating"
+                  fill="outline"
+                  placeholder="Enter username"
+                  value={username}
+                  onIonChange={(e) => setUsername(e.detail.value!)}
+                />
+              </IonCol>
+            </IonRow>
+            <IonRow>
+              <IonCol size="6">
+                <IonInput
+                  label="First Name"
+                  type="text"
+                  labelPlacement="floating"
+                  fill="outline"
+                  placeholder="Enter First Name"
+                  value={firstName}
+                  onIonChange={(e) => setFirstName(e.detail.value!)}
+                />
+              </IonCol>
+              <IonCol size="6">
+                <IonInput
+                  label="Last Name"
+                  type="text"
+                  labelPlacement="floating"
+                  fill="outline"
+                  placeholder="Enter Last Name"
+                  value={lastName}
+                  onIonChange={(e) => setLastName(e.detail.value!)}
+                />
+              </IonCol>
+            </IonRow>
+          </IonGrid>         
+          <IonGrid>
+            <IonRow>
+            <IonText color="secondary">
+            <h3>Change Password</h3>
+            </IonText>
+              <IonCol size="12">
+                <IonInput
+                  label="New Password"
+                  type="password"
+                  labelPlacement="floating"
+                  fill="outline"
+                  placeholder="Enter New Password"
+                  value={password}
+                  onIonChange={(e) => setPassword(e.detail.value!)}
+                >
+                  <IonInputPasswordToggle slot="end" />
+                </IonInput>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+  
+          <IonGrid>
+            <IonRow>
+              <IonCol size="12">
+                <IonInput
+                  label="Confirm Password"
+                  type="password"
+                  labelPlacement="floating"
+                  fill="outline"
+                  placeholder="Confirm New Password"
+                  value={confirmPassword}
+                  onIonChange={(e) => setConfirmPassword(e.detail.value!)}
+                >
+                  <IonInputPasswordToggle slot="end" />
+                </IonInput>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+
+
+          {/* Current Password Field */}
+          <IonGrid>
+            <IonRow>
+              <IonText color="secondary">
+              <h3>Confirm Changes</h3>
+              </IonText>
+              <IonCol size="12">
+                <IonInput
+                  label="Current Password"
+                  type="password"
+                  labelPlacement="floating"
+                  fill="outline"
+                  placeholder="Enter Current Password to Save Changess"
+                  value={currentPassword}
+                  onIonChange={(e) => setCurrentPassword(e.detail.value!)}
+                >
+                <IonInputPasswordToggle slot="end" />
+                </IonInput>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+  
+          <IonButton expand="full" onClick={handleUpdate} shape="round">
+            Update Account
+          </IonButton>
+  
+          {/* Alert for success or errors */}
+          <IonAlert
+            isOpen={showAlert}
+            onDidDismiss={() => setShowAlert(false)}
+            message={alertMessage}
+            buttons={['OK']}
+          />
+        </IonContent>
+      </IonPage>
+    );
+  };
+  
+  export default EditProfile;
