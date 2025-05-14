@@ -11,23 +11,14 @@ const SearchContainer: React.FC<SearchContainerProps> = ({ placeholder = 'Search
 
   const items = [
   'ReactJS',
-  'Ionic Framework',
+  'CCS',
   'Firebase',
   'Supabase',
-  'REST API',
-  'GraphQL',
   'TypeScript',
   'JavaScript',
   'Responsive Design',
-  'UI/UX Design',
-  'Component Reusability',
-  'Version Control',
-  'CI/CD',
-  'Unit Testing',
-  'State Management',
-  'Cross-Platform Development',
-  'Progressive Web App (PWA)',
-  'Backend as a Service (BaaS)',
+  'UX Design',
+  'UI Design',
   'Authentication',
   'Deployment'
 ]; // Application Development related terms
